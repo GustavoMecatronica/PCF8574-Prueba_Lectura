@@ -1,0 +1,69 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+005     PORTA
+006     PORTB
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     data
+022-023 count
+024     @I2C_READU_129.P1
+024     @I2C_WRITEU_129.P2
+024     main.@SCRATCH1
+025     @delay_ms1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @delay_ms1
+000018  @I2C_WRITEU_129
+00002A  @I2C_READU_129
+00003C  main
+00003C  @cinit1
+000069  @cinit2
+
+Project Directory:
+    C:\Users\Gustavo\Documents\05 YouTube\PCF8574\
+
+Project Files:
+    PCF8574.c                                               [23-ago.-21 14:38  CRC=9DC8EB36]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [30-oct.-19 16:48  CRC=C6420252]
+
+Source signature=2A4CEFDA
+Program memory checksum=0000
+Hex file CRC=9AE9
+
+Units:
+    C:\Users\Gustavo\Documents\05 YouTube\PCF8574\PCF8574 (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   PCF8574.xsym
+    Errors:      PCF8574.err
+    Ext Symbols: PCF8574.esym
+    INHX8:       PCF8574.hex
+    Symbols:     PCF8574.sym
+    List:        PCF8574.lst
+    Debug/COFF:  PCF8574.cof
+    Project:     PCF8574.ccspjt
+    Call Tree:   PCF8574.tre
+    Statistics:  PCF8574.STA

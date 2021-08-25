@@ -1,0 +1,10 @@
+ÀÄSigGen
+   ÃÄMAIN  0/84  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@cinit2  (Inline)  Ram=0
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÃÄ@delay_us1  0/17  Ram=1
+   ³  ÀÄ@delay_us1  0/17  Ram=1
+   ÀÄRDA_isr  0/125  Ram=0
+      ÀÄ@PRINTF_LU_9600_62_63  (Inline)  Ram=9

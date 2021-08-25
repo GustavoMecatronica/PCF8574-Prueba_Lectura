@@ -1,0 +1,50 @@
+[PROJECT]
+Target=SigGen.hex
+Processor_Text=PIC16F887
+CCSVersion=5.091
+Compiler=PCM
+[Target Data]
+FileList=SigGen.c
+[SigGen.c]
+Type=4
+[mru-list]
+1=SigGen.c
+
+[defines]
+buildcount=4
+
+[Opened Files]
+1=SigGen.c
+t1=1
+Count=1
+
+[ProjectLog]
+Days=2
+D1=23-08-2021
+D1_L=12
+D1_L1=[43559]Stopped Editing.
+D1_L2=[44187]Started Editing.
+D1_L3=[44243]Stopped Editing.
+TotalEdit=8
+TotalDebug=0
+D1_E=8
+D1_D=0
+D1_L4=[44244]Project Closed.
+D1_L5=[53921]Project Opened.
+D1_L6=[55367]Project Closed.
+D1_L7=[55367]Project Opened.
+D1_L8=[55370]Project Closed.
+D1_L9=[57849]Project Opened.
+D1_L10=[57858]Started Editing.
+D1_L11=[58158]Stopped Editing.
+D1_L12=[58941]Project Closed.
+D2=24-08-2021
+D2_L=2
+D2_L1=[65491]Project Opened.
+D2_L2=[65800]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=SigGen (main)

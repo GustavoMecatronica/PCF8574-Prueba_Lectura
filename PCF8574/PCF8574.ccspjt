@@ -1,0 +1,98 @@
+[PROJECT]
+Target=PCF8574.hex
+Processor_Text=PIC16F887
+CCSVersion=5.091
+Compiler=PCM
+[Target Data]
+FileList=PCF8574.c
+[PCF8574.c]
+Type=4
+[mru-list]
+1=PCF8574.c
+
+[defines]
+buildcount=68
+
+[Opened Files]
+1=PCF8574.c
+t1=1
+2=SigGen\SigGen.c
+t2=1
+3=..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
+t3=1
+Count=3
+
+[ProjectLog]
+Days=4
+D1=20-08-2021
+D1_L=6
+D1_L1=[55568]Stopped Editing.
+D1_L2=[66613]Started Editing.
+D1_L3=[68262]Stopped Editing.
+D1_L4=[68405]Started Editing.
+D1_L5=[68541]Stopped Editing.
+TotalEdit=305
+TotalDebug=0
+D1_E=46
+D1_D=0
+D1_L6=[68541]Project Closed.
+D2=21-08-2021
+D2_L=20
+D2_L1=[35363]Project Opened.
+D2_L2=[36013]Started Editing.
+D2_L3=[36541]Stopped Editing.
+D2_L4=[36670]Started Editing.
+D2_L5=[37351]Stopped Editing.
+D2_L6=[37539]Started Editing.
+D2_L7=[45022]Stopped Editing.
+D2_L8=[56161]Started Editing.
+D2_L9=[60038]Stopped Editing.
+D2_L10=[60381]Started Editing.
+D2_L11=[61560]Stopped Editing.
+D2_L12=[62045]Started Editing.
+D2_L13=[62330]Stopped Editing.
+D2_E=224
+D2_D=0
+D2_L14=[62330]Project Closed.
+D2_L15=[64716]Project Opened.
+D2_L16=[65058]Started Editing.
+D2_L17=[66172]Stopped Editing.
+D2_L18=[66186]Started Editing.
+D2_L19=[66513]Stopped Editing.
+D2_L20=[67081]Project Closed.
+D3=23-08-2021
+D3_L=18
+D3_L1=[42077]Project Opened.
+D3_L2=[42123]Started Editing.
+D3_L3=[42929]Stopped Editing.
+D3_E=30
+D3_D=0
+D3_L4=[42930]Project Closed.
+D3_L5=[44248]Project Opened.
+D3_L6=[47097]Started Editing.
+D3_L7=[47399]Stopped Editing.
+D3_L8=[47504]Started Editing.
+D3_L9=[48014]Stopped Editing.
+D3_L10=[52066]Started Editing.
+D3_L11=[52983]Stopped Editing.
+D3_L12=[53918]Project Closed.
+D3_L13=[55371]Project Opened.
+D3_L14=[55667]Project Closed.
+D3_L15=[56126]Project Opened.
+D3_L16=[57740]Started Editing.
+D3_L17=[57844]Stopped Editing.
+D3_L18=[57844]Project Closed.
+D4=24-08-2021
+D4_L=4
+D4_L1=[65803]Project Opened.
+D4_L2=[65831]Started Editing.
+D4_L3=[66088]Stopped Editing.
+D4_E=5
+D4_D=0
+D4_L4=[66089]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=PCF8574 (main)

@@ -1,0 +1,278 @@
+CCS PCM C Compiler, Version 5.091, 13314               24-ago.-21 18:17
+
+               Filename:   C:\Users\Gustavo\Documents\05 YouTube\PCF8574\PCF8574.lst
+
+               ROM used:   206 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   10 (3%) at main() level
+                           11 (3%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   03C
+0003:  NOP
+.................... #INCLUDE<16F887.h>
+.................... //////////// Standard Header file for the PIC16F887 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F887
+.................... 
+.................... #list
+.................... 
+.................... #FUSES XT,PUT,NOPROTECT,BROWNOUT,NOLVP,WDT
+.................... #USE delay(internal=8000000)
+0004:  MOVLW  25
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  02
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  97
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  RETURN
+.................... #USE I2C(MASTER, SDA=PIN_C4, SLOW, SCL=PIN_C3, NOFORCE_SW)
+0018:  BCF    14.7
+0019:  BCF    0C.3
+001A:  MOVF   24,W
+001B:  MOVWF  13
+001C:  MOVLW  02
+001D:  BTFSC  14.7
+001E:  GOTO   026
+001F:  BTFSS  0C.3
+0020:  GOTO   01F
+0021:  MOVLW  00
+0022:  BSF    03.5
+0023:  BTFSC  11.6
+0024:  MOVLW  01
+0025:  BCF    03.5
+0026:  MOVWF  78
+0027:  BCF    0A.3
+0028:  BCF    0A.4
+0029:  GOTO   0B8 (RETURN)
+002A:  BCF    14.6
+002B:  BSF    03.5
+002C:  BSF    11.3
+002D:  BTFSC  11.3
+002E:  GOTO   02D
+002F:  BTFSC  77.0
+0030:  BCF    11.5
+0031:  BTFSS  77.0
+0032:  BSF    11.5
+0033:  BSF    11.4
+0034:  BTFSC  11.4
+0035:  GOTO   034
+0036:  BCF    03.5
+0037:  MOVF   13,W
+0038:  MOVWF  78
+0039:  BCF    0A.3
+003A:  BCF    0A.4
+003B:  GOTO   0BB (RETURN)
+.................... #use standard_io(c)
+.................... 
+.................... #BYTE PORTA=5;
+.................... #BYTE PORTB=6;
+.................... 
+.................... #DEFINE btn PORTA,0
+.................... /***************************Variables globales********************************/
+.................... unsigned int data=0;
+.................... int16 count;
+.................... 
+.................... void main(){
+003C:  MOVF   03,W
+003D:  ANDLW  1F
+003E:  MOVWF  03
+003F:  MOVLW  71
+0040:  BSF    03.5
+0041:  MOVWF  0F
+0042:  CLRF   10
+0043:  MOVF   0F,W
+0044:  MOVLW  FF
+0045:  BCF    03.5
+0046:  MOVWF  20
+0047:  BSF    20.3
+0048:  MOVF   20,W
+0049:  BSF    03.5
+004A:  MOVWF  07
+004B:  BCF    03.5
+004C:  BSF    20.4
+004D:  MOVF   20,W
+004E:  BSF    03.5
+004F:  MOVWF  07
+0050:  MOVLW  13
+0051:  MOVWF  13
+0052:  MOVLW  28
+0053:  BCF    03.5
+0054:  MOVWF  14
+0055:  BSF    03.5
+0056:  BSF    14.7
+0057:  BCF    14.6
+0058:  BCF    03.5
+0059:  CLRF   21
+005A:  BSF    03.5
+005B:  BSF    03.6
+005C:  MOVF   09,W
+005D:  ANDLW  C0
+005E:  MOVWF  09
+005F:  BCF    03.6
+0060:  BCF    1F.4
+0061:  BCF    1F.5
+0062:  MOVLW  00
+0063:  BSF    03.6
+0064:  MOVWF  08
+0065:  BCF    03.5
+0066:  CLRF   07
+0067:  CLRF   08
+0068:  CLRF   09
+0069:  BCF    03.7
+.................... set_tris_b(0);
+006A:  MOVLW  00
+006B:  BSF    03.5
+006C:  BCF    03.6
+006D:  MOVWF  06
+.................... set_tris_a(0b01111111);
+006E:  MOVLW  7F
+006F:  MOVWF  05
+.................... output_low(PIN_A7);
+0070:  BCF    05.7
+0071:  BCF    03.5
+0072:  BCF    05.7
+.................... setup_wdt(WDT_2304MS); //config del watchdog cada 2.304 segundos
+0073:  MOVLW  09
+0074:  BSF    03.6
+0075:  MOVWF  05
+0076:  MOVLW  0F
+0077:  MOVWF  77
+0078:  BCF    03.6
+0079:  CLRF   01
+007A:  MOVLW  81
+007B:  MOVWF  04
+007C:  BCF    03.7
+007D:  MOVF   00,W
+007E:  ANDLW  F0
+007F:  IORLW  07
+0080:  MOVWF  00
+0081:  CLRWDT
+0082:  MOVF   00,W
+0083:  ANDLW  F7
+0084:  BTFSC  77.3
+0085:  ANDLW  F0
+0086:  IORWF  77,W
+0087:  MOVWF  00
+.................... while(!bit_test(btn)){
+0088:  BTFSC  05.0
+0089:  GOTO   094
+....................    delay_ms(200);
+008A:  MOVLW  C8
+008B:  MOVWF  25
+008C:  CALL   004
+....................    output_toggle(PIN_A7);
+008D:  BSF    03.5
+008E:  BCF    05.7
+008F:  MOVLW  80
+0090:  BCF    03.5
+0091:  XORWF  05,F
+....................    restart_wdt();
+0092:  CLRWDT
+0093:  GOTO   088
+.................... }
+.................... while(true){
+....................    
+....................    output_low(PIN_A7);
+0094:  BSF    03.5
+0095:  BCF    05.7
+0096:  BCF    03.5
+0097:  BCF    05.7
+....................    delay_ms(1000);
+0098:  MOVLW  04
+0099:  MOVWF  24
+009A:  MOVLW  FA
+009B:  MOVWF  25
+009C:  CALL   004
+009D:  DECFSZ 24,F
+009E:  GOTO   09A
+....................    output_high(PIN_A7);
+009F:  BSF    03.5
+00A0:  BCF    05.7
+00A1:  BCF    03.5
+00A2:  BSF    05.7
+....................    count=0;
+00A3:  CLRF   23
+00A4:  CLRF   22
+....................    restart_wdt();
+00A5:  CLRWDT
+....................    while(count<=1990){
+00A6:  MOVF   23,W
+00A7:  SUBLW  07
+00A8:  BTFSS  03.0
+00A9:  GOTO   0CC
+00AA:  BTFSS  03.2
+00AB:  GOTO   0B0
+00AC:  MOVF   22,W
+00AD:  SUBLW  C6
+00AE:  BTFSS  03.0
+00AF:  GOTO   0CC
+....................       i2c_start();
+00B0:  BSF    03.5
+00B1:  BSF    11.0
+00B2:  BTFSC  11.0
+00B3:  GOTO   0B2
+....................       i2c_write(0x71);
+00B4:  MOVLW  71
+00B5:  BCF    03.5
+00B6:  MOVWF  24
+00B7:  GOTO   018
+....................       data=i2c_read(1);
+00B8:  MOVLW  01
+00B9:  MOVWF  77
+00BA:  GOTO   02A
+00BB:  MOVF   78,W
+00BC:  MOVWF  21
+....................       i2c_stop();
+00BD:  BSF    03.5
+00BE:  BSF    11.2
+00BF:  BTFSC  11.2
+00C0:  GOTO   0BF
+....................       PORTB=data;
+00C1:  BCF    03.5
+00C2:  MOVF   21,W
+00C3:  MOVWF  06
+....................       delay_ms(1);
+00C4:  MOVLW  01
+00C5:  MOVWF  25
+00C6:  CALL   004
+....................       count++;
+00C7:  INCF   22,F
+00C8:  BTFSC  03.2
+00C9:  INCF   23,F
+....................       restart_wdt();
+00CA:  CLRWDT
+00CB:  GOTO   0A6
+....................    }
+00CC:  GOTO   094
+.................... }
+.................... }
+00CD:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2FEC   INTRC_IO WDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT
